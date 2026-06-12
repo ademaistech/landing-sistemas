@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <rect width="400" height="400" rx="40" fill="#0D0D0D"/>
+
+  <!-- ICONE / AVATAR DARK -->
+  <g transform="translate(88, 90)">
+    <rect x="0" y="78" width="22" height="50" rx="6" fill="#7B2FF7" opacity="0.20"/>
+    <rect x="30" y="52" width="22" height="102" rx="6" fill="#7B2FF7" opacity="0.38"/>
+    <rect x="60" y="26" width="22" height="154" rx="6" fill="#7B2FF7" opacity="0.60"/>
+
+    <rect x="90" y="2" width="26" height="200" rx="7" fill="#7B2FF7"/>
+
+    <rect x="124" y="26" width="22" height="154" rx="6" fill="#F5F5F5" opacity="0.45"/>
+    <rect x="154" y="52" width="22" height="102" rx="6" fill="#F5F5F5" opacity="0.25"/>
+    <rect x="184" y="78" width="22" height="50" rx="6" fill="#F5F5F5" opacity="0.12"/>
+  </g>
+
+  <text x="200" y="370" font-family="Inter, Arial, sans-serif" font-weight="500" font-size="11" fill="#8A8F99" text-anchor="middle" letter-spacing="3" opacity="0.4">
+    ICONE DARK — AVATAR / FAVICON
+  </text>
+</svg>

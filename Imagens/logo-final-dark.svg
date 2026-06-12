@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420">
+  <rect width="900" height="420" fill="#0D0D0D"/>
+
+  <!-- LOGO DARK — PULSE DATA -->
+  <g transform="translate(95, 90)">
+    <rect x="0" y="78" width="22" height="50" rx="6" fill="#7B2FF7" opacity="0.20"/>
+    <rect x="30" y="52" width="22" height="102" rx="6" fill="#7B2FF7" opacity="0.38"/>
+    <rect x="60" y="26" width="22" height="154" rx="6" fill="#7B2FF7" opacity="0.60"/>
+
+    <rect x="90" y="2" width="26" height="200" rx="7" fill="#7B2FF7"/>
+
+    <rect x="124" y="26" width="22" height="154" rx="6" fill="#F5F5F5" opacity="0.45"/>
+    <rect x="154" y="52" width="22" height="102" rx="6" fill="#F5F5F5" opacity="0.25"/>
+    <rect x="184" y="78" width="22" height="50" rx="6" fill="#F5F5F5" opacity="0.12"/>
+  </g>
+
+  <text x="345" y="200" font-family="Inter, SF Pro Display, Helvetica Neue, Arial, sans-serif" font-weight="900" font-size="80" fill="#F5F5F5" letter-spacing="-3">
+    ademais
+  </text>
+  <text x="348" y="248" font-family="Inter, SF Pro Display, Helvetica Neue, Arial, sans-serif" font-weight="500" font-size="34" fill="#7B2FF7" letter-spacing="3">
+    — tech
+  </text>
+
+  <text x="450" y="395" font-family="Inter, Arial, sans-serif" font-weight="500" font-size="12" fill="#8A8F99" text-anchor="middle" letter-spacing="3" opacity="0.4">
+    LOGO PRINCIPAL — FUNDO ESCURO
+  </text>
+</svg>
