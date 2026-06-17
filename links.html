@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ademais.tech — Links</title>
+  <meta name="description" content="Sistemas de gestao e landing pages para PMEs. Agendamento, clientes, financeiro e relatorios. Agende uma demonstracao gratuita.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --midnight: #0D0D0D;
+      --charcoal: #1A1A2E;
+      --violet: #7B2FF7;
+      --violet-hover: #6a1fe0;
+      --slate: #8A8F99;
+      --clean-white: #F5F5F5;
+      --white: #FFFFFF;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--midnight);
+      color: var(--clean-white);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 56px 20px 40px;
+      background-image:
+        radial-gradient(circle at 50% 0%, rgba(123,47,247,0.22), transparent 55%),
+        radial-gradient(circle at 50% 100%, rgba(26,26,46,0.9), transparent 60%);
+      background-attachment: fixed;
+    }
+    .wrap { width: 100%; max-width: 460px; }
+
+    /* ===== HEADER ===== */
+    .avatar {
+      width: 96px; height: 96px; margin: 0 auto 18px;
+      border-radius: 26px; background: var(--midnight);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 0 2px rgba(123,47,247,0.45), 0 12px 40px rgba(123,47,247,0.18);
+    }
+    .handle { text-align: center; font-weight: 900; font-size: 24px; letter-spacing: -0.5px; }
+    .handle .dot { color: var(--violet); }
+    .tagline {
+      text-align: center; color: var(--slate);
+      font-size: 15px; line-height: 1.55; margin: 10px auto 4px; max-width: 360px;
+    }
+    .modules {
+      text-align: center; color: var(--clean-white); opacity: 0.85;
+      font-size: 13px; letter-spacing: 0.3px; margin: 8px auto 34px;
+    }
+    .modules b { color: var(--violet); font-weight: 700; }
+
+    /* ===== LINKS ===== */
+    .links { display: flex; flex-direction: column; gap: 14px; }
+    .link {
+      display: flex; align-items: center; gap: 16px;
+      width: 100%; padding: 17px 20px;
+      background: rgba(245,245,245,0.04);
+      border: 1px solid rgba(245,245,245,0.10);
+      border-radius: 16px; color: var(--clean-white);
+      text-decoration: none; font-weight: 700; font-size: 15.5px;
+      transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+      backdrop-filter: blur(6px);
+    }
+    .link:hover { transform: translateY(-3px); background: rgba(245,245,245,0.08); border-color: rgba(123,47,247,0.6); }
+    .link .ic { flex: 0 0 24px; width: 24px; height: 24px; color: var(--violet); }
+    .link .txt { display: flex; flex-direction: column; gap: 2px; }
+    .link .sub { font-weight: 400; font-size: 12.5px; color: var(--slate); }
+    .link .arrow { margin-left: auto; color: var(--slate); transition: transform 0.18s ease, color 0.18s ease; }
+    .link:hover .arrow { transform: translateX(4px); color: var(--violet); }
+
+    /* primary CTA */
+    .link.primary {
+      background: var(--violet); border-color: var(--violet);
+      box-shadow: 0 10px 30px rgba(123,47,247,0.35);
+    }
+    .link.primary .ic, .link.primary .arrow { color: var(--white); }
+    .link.primary .sub { color: rgba(255,255,255,0.78); }
+    .link.primary:hover { background: var(--violet-hover); border-color: var(--violet-hover); }
+
+    /* ===== FOOTER ===== */
+    .foot { text-align: center; margin-top: 36px; }
+    .foot a { color: var(--slate); text-decoration: none; font-size: 13px; }
+    .foot a:hover { color: var(--violet); }
+    .foot .sep { color: rgba(138,143,153,0.4); margin: 0 8px; }
+    .copy { color: rgba(138,143,153,0.6); font-size: 11px; margin-top: 14px; letter-spacing: 0.3px; }
+
+    @media (max-width: 380px) {
+      .handle { font-size: 21px; }
+      .link { font-size: 14.5px; padding: 15px 16px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+
+    <!-- Avatar: icone Pulse Data -->
+    <div class="avatar" aria-label="ademais.tech">
+      <svg width="62" height="62" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo ademais.tech">
+        <g transform="translate(28, 50)">
+          <rect x="0" y="78" width="22" height="50" rx="6" fill="#7B2FF7" opacity="0.20"/>
+          <rect x="30" y="52" width="22" height="102" rx="6" fill="#7B2FF7" opacity="0.38"/>
+          <rect x="60" y="26" width="22" height="154" rx="6" fill="#7B2FF7" opacity="0.60"/>
+          <rect x="90" y="2" width="26" height="200" rx="7" fill="#7B2FF7"/>
+          <rect x="124" y="26" width="22" height="154" rx="6" fill="#F5F5F5" opacity="0.45"/>
+          <rect x="154" y="52" width="22" height="102" rx="6" fill="#F5F5F5" opacity="0.25"/>
+          <rect x="184" y="78" width="22" height="50" rx="6" fill="#F5F5F5" opacity="0.12"/>
+        </g>
+      </svg>
+    </div>
+
+    <h1 class="handle">ademais<span class="dot">.tech</span></h1>
+    <p class="tagline">Sistemas de gestao e landing pages para PMEs. Sem planilha. Sem caos.</p>
+    <p class="modules"><b>&rarr;</b> Agendamento &bull; Clientes &bull; Financeiro &bull; Relatorios</p>
+
+    <nav class="links">
+
+      <!-- 1. CTA principal -->
+      <a class="link primary" href="https://wa.me/5531971277072?text=Ol%C3%A1!%20Quero%20agendar%20uma%20demonstra%C3%A7%C3%A3o%20gratuita%20do%20sistema%20de%20gest%C3%A3o." target="_blank" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="3"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        <span class="txt"><span>Agende uma demonstracao gratuita</span><span class="sub">Veja o sistema funcionando no seu negocio</span></span>
+        <span class="arrow">&rsaquo;</span>
+      </a>
+
+      <!-- 2. Sistema de gestao -->
+      <a class="link" href="./landing_sistemas_ademais-tech.html" target="_blank" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        <span class="txt"><span>Conheca o sistema de gestao</span><span class="sub">Agendamento, financeiro e relatorios num so lugar</span></span>
+        <span class="arrow">&rsaquo;</span>
+      </a>
+
+      <!-- 3. Landing pages -->
+      <a class="link" href="./index.html" target="_blank" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        <span class="txt"><span>Quero uma landing page</span><span class="sub">Pagina de alta conversao para o seu produto</span></span>
+        <span class="arrow">&rsaquo;</span>
+      </a>
+
+      <!-- 4. WhatsApp -->
+      <a class="link" href="https://wa.me/5531971277072" target="_blank" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2Zm0 1.83c2.16 0 4.18.84 5.71 2.37a8.04 8.04 0 0 1 2.37 5.71c0 4.45-3.62 8.08-8.08 8.08a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3.12.82.83-3.04-.19-.31a8.05 8.05 0 0 1-1.24-4.32c0-4.45 3.62-8.07 8.08-8.07Zm-2.7 4.35c-.16 0-.42.06-.64.31-.22.25-.84.82-.84 2.01s.86 2.33.98 2.49c.12.16 1.69 2.58 4.1 3.62.57.25 1.02.4 1.37.5.57.18 1.1.16 1.51.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.25-.62.78-.76.94-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.93-1.19-.71-.64-1.19-1.42-1.33-1.66-.14-.25-.01-.38.11-.5.11-.11.24-.28.36-.42.12-.14.16-.25.24-.41.08-.16.04-.31-.02-.43-.06-.12-.54-1.31-.76-1.79-.18-.41-.37-.42-.54-.43-.14-.01-.3-.01-.46-.01Z"/></svg>
+        <span class="txt"><span>Fale no WhatsApp</span><span class="sub">Tire suas duvidas com a gente</span></span>
+        <span class="arrow">&rsaquo;</span>
+      </a>
+
+      <!-- 5. Cases / Depoimentos -->
+      <a class="link" href="https://instagram.com/ademais.tech" target="_blank" rel="noopener">
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.9 6.26L21.5 9l-5 4.6L18 21l-6-3.4L6 21l1.5-7.4-5-4.6 6.6-.74z"/></svg>
+        <span class="txt"><span>Cases e depoimentos</span><span class="sub">Resultados reais de quem ja usa</span></span>
+        <span class="arrow">&rsaquo;</span>
+      </a>
+
+    </nav>
+
+    <footer class="foot">
+      <a href="mailto:ademais.tech@gmail.com">ademais.tech@gmail.com</a>
+      <span class="sep">&bull;</span>
+      <a href="https://instagram.com/ademais.tech" target="_blank" rel="noopener">@ademais.tech</a>
+      <p class="copy">&copy; 2026 ademais.tech — Tecnologia de gestao para PMEs</p>
+    </footer>
+
+  </main>
+</body>
+</html>

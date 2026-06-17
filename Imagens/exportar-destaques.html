@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ademais.tech — Exportar Capas de Destaques (PNG)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #0D0D0D; color: #F5F5F5; padding: 60px 40px; }
+    h1 { font-size: 36px; font-weight: 900; letter-spacing: -1px; margin-bottom: 8px; }
+    h1 span { color: #7B2FF7; }
+    .subtitle { color: #8A8F99; font-size: 16px; margin-bottom: 40px; max-width: 640px; line-height: 1.5; }
+    .actions { margin: 0 0 40px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 28px; }
+    .card { background: #1A1A2E; border-radius: 16px; overflow: hidden; }
+    .card-preview { background: #111; display: flex; align-items: center; justify-content: center; padding: 24px; }
+    /* Circle mask shows exactly how Instagram crops the highlight cover */
+    .card-preview img { width: 220px; height: 220px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 3px #7B2FF7; }
+    .card-info { padding: 20px 24px; }
+    .card-info h3 { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
+    .card-info p { font-size: 13px; color: #8A8F99; margin-bottom: 6px; }
+    .card-info .dims { font-size: 11px; color: #7B2FF7; font-weight: 600; letter-spacing: 1px; margin-bottom: 14px; }
+    .btn { display: inline-block; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700; padding: 10px 24px; border: none; border-radius: 10px; cursor: pointer; transition: background 0.2s; }
+    .btn-primary { background: #7B2FF7; color: #FFF; }
+    .btn-primary:hover { background: #6520d6; }
+    .status { font-size: 12px; color: #2D9B6E; margin-top: 8px; min-height: 18px; }
+    .footer { text-align: center; margin-top: 60px; color: #8A8F99; font-size: 13px; }
+  </style>
+</head>
+<body>
+
+  <h1>Capas de Destaques <span>ademais.tech</span></h1>
+  <p class="subtitle">As 6 capas dos Destaques do Instagram no padrao da marca. A previa mostra exatamente como o Instagram recorta a capa em circulo. Clique para baixar cada uma em PNG 1080x1080 e suba pelo app (Editar destaque &rarr; Editar capa &rarr; escolher da galeria).</p>
+
+  <div class="actions">
+    <button class="btn btn-primary" onclick="downloadAll()">Baixar todas em PNG</button>
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <p class="footer">ademais.tech — Capas geradas em Junho 2026</p>
+
+  <script>
+    const ringFrame = `<circle cx="540" cy="540" r="472" fill="none" stroke="#7B2FF7" stroke-opacity="0.35" stroke-width="4"/>`;
+    const defs = `<defs><radialGradient id="bg" cx="50%" cy="42%" r="62%"><stop offset="0%" stop-color="#1A1A2E"/><stop offset="100%" stop-color="#0D0D0D"/></radialGradient><radialGradient id="glow" cx="50%" cy="42%" r="32%"><stop offset="0%" stop-color="#7B2FF7" stop-opacity="0.40"/><stop offset="100%" stop-color="#7B2FF7" stop-opacity="0"/></radialGradient></defs>`;
+    const base = `<rect width="1080" height="1080" fill="url(#bg)"/><circle cx="540" cy="455" r="300" fill="url(#glow)"/>` + ringFrame;
+    const label = (t, size) => `<text x="540" y="742" text-anchor="middle" font-family="Inter, 'SF Pro Display', Helvetica, Arial, sans-serif" font-weight="800" font-size="${size}" letter-spacing="4" fill="#F5F5F5">${t}</text>`;
+    const wrap = (inner) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">${defs}${base}${inner}</svg>`;
+
+    const icons = {
+      comece: `<g stroke-linecap="round" stroke-linejoin="round"><line x1="468" y1="330" x2="468" y2="588" stroke="#F5F5F5" stroke-width="18"/><path d="M468 346 L648 388 L468 430 Z" fill="#7B2FF7"/></g>`,
+      sistema: `<g><rect x="406" y="330" width="120" height="120" rx="20" fill="#7B2FF7"/><rect x="554" y="330" width="120" height="120" rx="20" fill="none" stroke="#F5F5F5" stroke-width="14"/><rect x="406" y="478" width="120" height="120" rx="20" fill="none" stroke="#F5F5F5" stroke-width="14"/><rect x="554" y="478" width="120" height="120" rx="20" fill="none" stroke="#F5F5F5" stroke-width="14"/></g>`,
+      resultados: `<g><rect x="416" y="470" width="80" height="128" rx="14" fill="#F5F5F5"/><rect x="500" y="408" width="80" height="190" rx="14" fill="#F5F5F5"/><rect x="584" y="338" width="80" height="260" rx="14" fill="#7B2FF7"/></g>`,
+      depoimentos: `<g><path d="M446 348 H634 A34 34 0 0 1 668 382 V478 A34 34 0 0 1 634 512 H540 L470 576 L486 512 H446 A34 34 0 0 1 412 478 V382 A34 34 0 0 1 446 348 Z" fill="none" stroke="#F5F5F5" stroke-width="14" stroke-linejoin="round"/><rect x="448" y="392" width="184" height="16" rx="8" fill="#F5F5F5"/><rect x="448" y="428" width="184" height="16" rx="8" fill="#F5F5F5"/><rect x="448" y="464" width="112" height="16" rx="8" fill="#7B2FF7"/></g>`,
+      duvidas: `<g><circle cx="540" cy="448" r="132" fill="none" stroke="#F5F5F5" stroke-width="14"/><path d="M500 416 a40 40 0 1 1 66 30 c-18 14 -26 24 -26 44" fill="none" stroke="#7B2FF7" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/><circle cx="540" cy="524" r="13" fill="#7B2FF7"/></g>`,
+      demo: `<g stroke-linecap="round" stroke-linejoin="round"><rect x="398" y="338" width="284" height="196" rx="26" fill="none" stroke="#F5F5F5" stroke-width="14"/><path d="M512 396 L600 446 L512 496 Z" fill="#7B2FF7"/><line x1="540" y1="534" x2="540" y2="566" stroke="#F5F5F5" stroke-width="14"/><line x1="484" y1="566" x2="596" y2="566" stroke="#F5F5F5" stroke-width="14"/></g>`
+    };
+
+    const covers = [
+      { key: 'comece',      name: '1. Comece aqui',  desc: 'O que e a ademais.tech, para quem e, como funciona', size: 46, filename: 'destaque-01-comece-aqui.png' },
+      { key: 'sistema',     name: '2. O Sistema',    desc: 'Tour dos modulos: agendamento, clientes, financeiro, relatorios', size: 50, filename: 'destaque-02-o-sistema.png' },
+      { key: 'resultados',  name: '3. Resultados',   desc: 'Numeros, antes/depois, prova de resultado', size: 46, filename: 'destaque-03-resultados.png' },
+      { key: 'depoimentos', name: '4. Depoimentos',  desc: 'Clientes falando, prints de conversa', size: 42, filename: 'destaque-04-depoimentos.png' },
+      { key: 'duvidas',     name: '5. Duvidas',      desc: 'FAQ: preco, implementacao, suporte, migracao', size: 50, filename: 'destaque-05-duvidas.png' },
+      { key: 'demo',        name: '6. Demo',         desc: 'Como agendar uma demonstracao + CTA', size: 54, filename: 'destaque-06-demo.png' }
+    ];
+
+    const labels = { comece: 'COMECE AQUI', sistema: 'O SISTEMA', resultados: 'RESULTADOS', depoimentos: 'DEPOIMENTOS', duvidas: 'DUVIDAS', demo: 'DEMO' };
+
+    function svgFor(c) { return wrap(icons[c.key] + label(labels[c.key], c.size)); }
+    function svgToDataUrl(s) { return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(s); }
+
+    function downloadPng(c) {
+      const canvas = document.createElement('canvas');
+      canvas.width = 1080; canvas.height = 1080;
+      const ctx = canvas.getContext('2d');
+      const img = new Image();
+      img.onload = function() {
+        ctx.drawImage(img, 0, 0, 1080, 1080);
+        const a = document.createElement('a');
+        a.href = canvas.toDataURL('image/png');
+        a.download = c.filename;
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        const s = document.getElementById('status-' + c.key);
+        if (s) { s.textContent = 'Baixado!'; setTimeout(() => s.textContent = '', 2000); }
+      };
+      img.onerror = function() { alert('Erro ao renderizar: ' + c.key); };
+      img.src = svgToDataUrl(svgFor(c));
+    }
+
+    function downloadAll() { let d = 0; covers.forEach(c => { setTimeout(() => downloadPng(c), d); d += 600; }); }
+
+    function render() {
+      const grid = document.getElementById('grid');
+      covers.forEach(c => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <div class="card-preview"><img src="${svgToDataUrl(svgFor(c))}" alt="${c.name}"></div>
+          <div class="card-info">
+            <h3>${c.name}</h3>
+            <p>${c.desc}</p>
+            <div class="dims">1080 x 1080px — PNG</div>
+            <button class="btn btn-primary">Baixar PNG</button>
+            <div class="status" id="status-${c.key}"></div>
+          </div>`;
+        card.querySelector('button').addEventListener('click', () => downloadPng(c));
+        grid.appendChild(card);
+      });
+    }
+    render();
+  </script>
+</body>
+</html>

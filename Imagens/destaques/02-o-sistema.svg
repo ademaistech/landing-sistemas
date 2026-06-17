@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="1080" height="1080">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="42%" r="62%">
+      <stop offset="0%" stop-color="#1A1A2E"/><stop offset="100%" stop-color="#0D0D0D"/>
+    </radialGradient>
+    <radialGradient id="glow" cx="50%" cy="42%" r="32%">
+      <stop offset="0%" stop-color="#7B2FF7" stop-opacity="0.40"/><stop offset="100%" stop-color="#7B2FF7" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1080" height="1080" fill="url(#bg)"/>
+  <circle cx="540" cy="455" r="300" fill="url(#glow)"/>
+  <circle cx="540" cy="540" r="472" fill="none" stroke="#7B2FF7" stroke-opacity="0.35" stroke-width="4"/>
+  <g>
+    <rect x="406" y="330" width="120" height="120" rx="20" fill="#7B2FF7"/>
+    <rect x="554" y="330" width="120" height="120" rx="20" fill="none" stroke="#F5F5F5" stroke-width="14"/>
+    <rect x="406" y="478" width="120" height="120" rx="20" fill="none" stroke="#F5F5F5" stroke-width="14"/>
+    <rect x="554" y="478" width="120" height="120" rx="20" fill="none" stroke="#F5F5F5" stroke-width="14"/>
+  </g>
+  <text x="540" y="742" text-anchor="middle" font-family="Inter, 'SF Pro Display', Helvetica, Arial, sans-serif" font-weight="800" font-size="50" letter-spacing="4" fill="#F5F5F5">O SISTEMA</text>
+</svg>
